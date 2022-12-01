@@ -2,7 +2,8 @@ package com.example.proaiocompany.api;
 
 import com.example.proaiocompany.model.Person;
 import com.example.proaiocompany.service.PersonService;
-import jakarta.servlet.annotation.HttpMethodConstraint;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,13 +37,13 @@ public class PersonController {
                 .orElse(null);
     }
 
-    @DeleteMapping
+    @DeleteMapping(path = "{id}")
     public void deletePersonById(@PathVariable("id") UUID id) {
         personService.deletePersonById(id);
     }
 
-    @PutMapping
-    public void updatePersonById(@PathVariable("id") UUID id, @RequestBody Person personToUIpdate) {
-        personService.updatePersonById(id, personToUIpdate);
+    @PutMapping(path = "{id}")
+    public void updatePersonById(@PathVariable("id") UUID id, @Valid @NotNull @RequestBody Person personToUpdate) {
+        personService.updatePersonById(id, personToUpdate);
     }
 }
