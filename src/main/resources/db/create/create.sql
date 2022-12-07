@@ -1,1 +1,0 @@
-CREATE DATABASE pro_io_company_postgres_db;
