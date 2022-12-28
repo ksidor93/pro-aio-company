@@ -21,12 +21,10 @@ jobs:
           repository: admin/test-backend
           tag: latest
       - name: Create stack in Portainer
-        uses: lscr.io/linuxserver/portainer-actions@master
+        uses: carlrygart/portainer-stack-deploy@v1.3.0
         with:
-          portainer_url: ${{ secrets.PORTAINER_URL }}
-          portainer_username: ${{ secrets.PORTAINER_USERNAME }}
-          portainer_password: ${{ secrets.PORTAINER_PASSWORD }}
+          stack-definition: Java/.build/stack-file.yaml
+          portainer-host: ${{ secrets.PORTAINER_URL }}
+          username: ${{ secrets.PORTAINER_USERNAME }}
+          password: ${{ secrets.PORTAINER_PASSWORD }}
           stack_name: production
-          stack_file: |
-            $(cat .build/stack-file.yml)
-          merge_mode: merge
