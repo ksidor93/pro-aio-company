@@ -6,7 +6,7 @@ name: Deploy to Portainer
 on:
   push:
     branches:
-      - '*''
+      - '*'
 
 jobs:
   build-and-push:
