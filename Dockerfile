@@ -7,7 +7,7 @@ COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
 
-RUN ./mvnw install -DskipTests
+RUN ./mvnw install --no-transfer-progress -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency && jar -xf ../*.jar)
 
 FROM openjdk:18-jdk-alpine
