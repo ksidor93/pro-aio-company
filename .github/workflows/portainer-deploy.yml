@@ -29,7 +29,7 @@ jobs:
         name: Create stack in Portainer
         uses: carlrygart/portainer-stack-deploy@v1.3.0
         with:
-          stack-definition: .build/stack-file.yaml
+          stack-definition: .build/stack-file.yml
           portainer-host: ${{ secrets.PORTAINER_URL }}
           username: ${{ secrets.PORTAINER_USERNAME }}
           password: ${{ secrets.PORTAINER_PASSWORD }}
