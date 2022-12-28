@@ -25,7 +25,7 @@ jobs:
           file: Dockerfile
           tags: ${{ secrets.DOCKER_REGISTRY }}/admin/test-backend:latest
           push: true
-  deply:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - 
