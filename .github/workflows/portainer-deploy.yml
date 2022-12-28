@@ -23,8 +23,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           file: Dockerfile
-          repository: admin/test-backend
-          tag: latest
+          tags: admin/test-backend:latest
           push: true
       - 
         name: Create stack in Portainer
