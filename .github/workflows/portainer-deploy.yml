@@ -25,9 +25,6 @@ jobs:
           file: Dockerfile
           tags: ${{ secrets.DOCKER_REGISTRY }}/admin/test-backend:latest
           push: true
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
       - 
         name: Create stack in Portainer
         uses: carlrygart/portainer-stack-deploy@v1.3.0
