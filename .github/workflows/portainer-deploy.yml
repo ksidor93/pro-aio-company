@@ -23,7 +23,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           file: Dockerfile
-          tags: admin/test-backend:latest
+          tags: registry.emontazysta.pl/admin/test-backend:latest
           push: true
       - 
         name: Create stack in Portainer
